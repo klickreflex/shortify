@@ -5,7 +5,7 @@
     var settings = $.extend({
         // These are the defaults.
         char_limit:       "100",
-        position:         "tooltip-bottom",
+        position:         "tooltip-top",
         ellipsis:  "…"
     }, options );
 
@@ -16,7 +16,6 @@
       if(char_count > settings.char_limit) {
         $this.addClass("shortified " + settings.position);
         $this.attr("data-tooltip", $this.text());
-        $this.append("FOO");
         trimmed = $this.text().substring(0, settings.char_limit).split(" ").slice(0, -1).join(" ") + settings.ellipsis;
         $this.text(trimmed);
       }
